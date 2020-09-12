@@ -1,47 +1,61 @@
-var question = document.getElemtryById("questions")
-var answerA = document.getElementById("a");
-var answerB = document.getElementById("b");
-var answerC = document.getElementById("c");
-var answerD = document.getElementById("d");
-var rightWrong = document.getElementById("wr");
-var timeEl = document.getElementById("time");
+var timer = document.getElementById("time");
+var questions = document.getElementById("questions");
+var buttonA = document.getElementById("a");
+var buttonB = document.getElementById("b");
+var buttonC = document.getElementById("c");
+var buttonD = document.getElementById("d");
+var container = document.getElementsByClassName("container");
 
-var count = 40
-var timeEl = setInterval(function(){
-count--;
-if (count > 0){
-   // print you lose page
-}
+var ask = [
+  {
+    "what is javascript?": [
+      "clothesbrand",
+      "videogame",
+      "programing language",
+      "tv",
+    ],
+  },
+  { "is javascript case-sensitive?": ["maybe", "sometimes", "false", "true"] },
+  {
+    "what is the syntex for an array": ["programinglanguge", "no", "<>", "[]"],
+  },
+  {
+    "is java able to change images": ["tvshow", "maybe", "[]", "true", "false"],
+  },
+];
 
+// function showquestions() {
+//   for (var i = 0; i < ask.length; i++) {
+//     var questionShown = ask[0];
+//   }
+//   showquestions();
 
-//loop answers
-answerA=["clothesbrand", "yes", "::","true","false" ]
-asnwerB=["videogame","sometimes","()", "false", "true"]
-answerC=["programinglanguge", "no","<>", "", ""]
-answerD=["tvshow", "maybe", "[]","", "" ]
-var questions =  ["what is javascript?", "is javascript case-sensitive?", "what is the syntex for a array", "is java able to change images", "can you photoshop with java"
- ]
-//hard code
-buttonEl.addEventListener('click',function())
+buttonA.addEventListener("click", function () {
+  ask.text = ask[0];
+});
+// }
+// questions.textcontent = ask[i];
+// function setTimer(){
+//       var timer = 60;
+//       var prepareInterval = setInterval(function(){
+//        timer--;
+//         if (timer === 0){
+//          }, 1000
+//        }
 
-function loadQuestion(){
-document.body.apendChiled(h1el);
-question.setAttribute.textContent = "is java case sensative"
+//
 
+// var currentaskIndex = 0;
+// function addAndRemove (){
+//    var currentaskIndex = 0;
+//     ask.textContent = ask[currentaskIndex];
+//     //askArray = ask.split("")
 
-answerA.setAttribute.textContent = "yes"
-document.body.apendChiled(answerB)
-answerB.setAttribute.textConttent = "maybe"
-document.body.apendChiled(answerC)
-answerB.setAttribute.textConttent = "no"
-document.body.apendChiled(answerD)
-answerB.setAttribute.textConttent = "sometimes"
-}
-correctAnwer= answerC[1]
-if {buttonA.addEventListener(click,funciton()) !== answerA
-.setInterval --
-}
+//   // .empty
+//      .questions.setAttribute.textContent = ask[currrentaskIndex]
+// // if else
+//       answerA.setAttribuete.textContent == answerA[0]; +
 
-
-
-
+//     answerB.setAttribuete.textContent == answerB[0]; +
+//     answerC.setAttribute.textConttent == answerC[0]; +
+//    answerD.setAttribute.textConttent == answerD[0];
