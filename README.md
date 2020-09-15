@@ -20,6 +20,6 @@ What I wanted to do but, was not able to. is to change the questions being asked
 
 eventually created a function that cycled a new positiong of the variable 'ask' array. to a diffrent positiong of the array
 showing a new question and answers.
-![screenshot](./assets/shot1.png)
+![screenshot](./assets/sho1.png)
 ![screenshot](./assets/shot2.png)
 [this is the link to the page](https://wilmer88.github.io/quizilla-api/)
