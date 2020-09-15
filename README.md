@@ -18,3 +18,6 @@ What I wanted to do but, was not able to. is to change the questions being asked
 a event listener that listend to my variable button clicked and that would change the text content to
 a new positiong of the variable 'ask' array that i created, to a diffrent positiong of the array
 showing a new question.
+![screenshot](./assets/shot1.png)
+![screenshot](./assets/shot2.png)
+[this is the link to the page]()
