@@ -12,6 +12,7 @@ var ask = [
   "is javascript case sensative",
   "was java script here in 1960",
   "is javascript a progarming language:",
+  "your are done with this quiz",
 ];
 var timer = 60;
 
