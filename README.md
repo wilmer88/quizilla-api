@@ -14,10 +14,12 @@ My next step was to assigned variable the targeted the html properties.
 The next step that I took was to create interval that subtracted one second at a time
 for the game clock. if any wrong anwers is clicked the timer would be deducted by 20 seconds
 
-What I wanted to do but, was not able to. is to change the questions being asked by creating
-a event listener that listend to my variable button clicked and that would change the text content to
-a new positiong of the variable 'ask' array that i created, to a diffrent positiong of the array
-showing a new question.
+I ended up creating a button with a eventlistener to start a timer.
+
+What I wanted to do but, was not able to. is to change the questions being asked to clear() or null by adding a function to the container
+
+eventually created a function that cycled a new positiong of the variable 'ask' array. to a diffrent positiong of the array
+showing a new question and answers.
 ![screenshot](./assets/shot1.png)
 ![screenshot](./assets/shot2.png)
-[this is the link to the page]()
+[this is the link to the page](https://wilmer88.github.io/quizilla-api/)
