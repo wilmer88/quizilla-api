@@ -1,18 +1,19 @@
 var clock = document.getElementById("time");
 var questions = document.getElementById("questions");
-var buttonA = document.getElementById("a");
-var buttonB = document.getElementById("b");
-var buttonC = document.getElementById("c");
+var mainButton = document.getElementById("option")
 var maincontainer = document.getElementById("container");
 var wordposition = document.getElementById("ask");
-var respondA = ["true", "yes", "always", "true"];
-var respondB = ["false", "no", "never", "false"];
+var respond1 = ["framework", "programing language", "scripting language", "gaming program"];
+var respond2 = ["functions", "variables", "for loops", "c++"];
+var respond3 = ["1990", "1998", "2002", "1995"];
+var respond4 = ["loki", "wanda vision", "falcon and the winter soilder", "agent carter"];
+var respond2 = ["frank", "victor", "felix", "wilmer"];
 var ask = [
-  "is javascript a progarming language",
-  "is javascript case sensative",
-  "was java script here in 1960",
-  "is javascript a progarming language:",
-  "your are done with this quiz",
+  "is javascript",
+  "is not part of javascript",
+  "year javascript was created",
+  "time travel marvel show",
+  "who wrote this code",
 ];
 var timer = 60;
 
@@ -24,11 +25,6 @@ function showoptions() {
   answers++;
 }
 
-// showquestions();
-//buttonA.addEventListener("click", showquestion);
-
-buttonA.addEventListener("click", setTimer);
-
 function setTimer() {
   var prepareInterval = setInterval(function () {
     clock.textContent = timer;
@@ -38,5 +34,7 @@ function setTimer() {
     }
   }, 1000);
 }
-buttonB.addEventListener("click", showoptions);
-buttonC.addEventListener("click", showoptions);
+buttonA.addEventListener("click", function () {
+  setTimer();
+  
+});
