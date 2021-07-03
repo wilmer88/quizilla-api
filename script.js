@@ -1,13 +1,20 @@
+var answerBox = document.getElementsByTagName("button");
+var listItem = document.getElementsByTagName("ul");
+var listChoice = document.getElementsByTagName("li");
 var clock = document.getElementById("time");
-var questions = document.getElementById("questions");
-var mainButton = document.getElementById("option")
+var questions = document.getElementById("qa");
+var button1 = document.getElementById("bsb");
+var button2 = document.getElementById("nsync");
+var button3 = document.getElementById("98");
+var button4 = document.getElementById("otown");
+var button5 = document.getElementById("newkid");
 var maincontainer = document.getElementById("container");
-var wordposition = document.getElementById("ask");
-var respond1 = ["framework", "programing language", "scripting language", "gaming program"];
-var respond2 = ["functions", "variables", "for loops", "c++"];
-var respond3 = ["1990", "1998", "2002", "1995"];
-var respond4 = ["loki", "wanda vision", "falcon and the winter soilder", "agent carter"];
-var respond2 = ["frank", "victor", "felix", "wilmer"];
+
+var respond1 = ["framework", "for loops", "1990", "loki"];
+var respond2 = ["gaming program", "variables", "1995", "c sharp"];
+var respond3 = ["scripting language", "functions", "2002", "rugrats"];
+var respond4 = ["programing language", "c++", "1986", "agent carter"];
+
 var ask = [
   "is javascript",
   "is not part of javascript",
@@ -15,14 +22,32 @@ var ask = [
   "time travel marvel show",
   "who wrote this code",
 ];
+
+for (var i = 0; i < respond3.length; i++) {
+  answerBox.textContent = respond3[i];
+}
+var listNumber = 1;
+for (var i = 0; i < respond3.length; i++) {
+  listChoice.id = listNumber++;
+}
+for (var i = 0; i < respond3.length; i++) {
+  listChoice.value = answerBox;
+}
+for (var i = 0; i < respond3.length; i++) {
+  listItem.append(listChoice);
+}
+
 var timer = 60;
 
-var answers = 0;
+var currentindex = 0;
 function showoptions() {
-  wordposition.textContent = ask[answers];
-  buttonB.innerHTML = respondA[answers];
-  buttonC.innerHTML = respondB[answers];
-  answers++;
+  questions.textContent = ask[currentindex];
+  button5.textContent = respond1[currentindex];
+  button2.textContent = respond2[currentindex];
+  button3.textContent = respond3[currentindex];
+  button4.textContent = respond4[currentindex];
+
+  currentindex++;
 }
 
 function setTimer() {
@@ -34,7 +59,15 @@ function setTimer() {
     }
   }, 1000);
 }
-buttonA.addEventListener("click", function () {
-  setTimer();
-  
+function wasClicked() {
+  console.log("buttonkl[o] was clicked");
+}
+page.button2.addEventListener("click", function () {
+  wasClicked();
+  // setTimer();
+  // showoptions();
 });
+// button1.addEventListener("click", function () {
+//   button1.style.display = "none";
+//   showoptions();
+// });
