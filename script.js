@@ -8,7 +8,6 @@ var button1 = document.getElementById("bsb");
 var button2 = document.getElementById("nsync");
 var button3 = document.getElementById("98");
 var button4 = document.getElementById("otown");
-var button5 = document.getElementById("newkid");
 var maincontainer = document.getElementById("container");
 var timer = 60;
 var started = false; 
@@ -16,6 +15,19 @@ var respond1 = ["framework", "for loops", "1990", "loki"];
 var respond2 = ["gaming program", "variables", "1995", "c sharp"];
 var respond3 = ["scripting language", "functions", "2002", "rugrats"];
 var respond4 = ["programing language", "c++", "1986", "agent carter"];
+
+function setTime() {
+  var timerInterval = setInterval(function() {
+    timer--;
+    clock.textContent = timer;
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      
+    }
+
+  }, 1000);
+}
 
 var ask = [
   "is javascript",
@@ -46,7 +58,7 @@ function wasClicked() {
   currentindex++;
 }
 button1.addEventListener("click", function () {
-  
+  setTime()
   console.log(currentindex)
 if(started == false){
   started = true;
