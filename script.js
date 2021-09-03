@@ -9,7 +9,7 @@ var button2 = document.getElementById("nsync");
 var button3 = document.getElementById("98");
 var button4 = document.getElementById("otown");
 var maincontainer = document.getElementById("container");
-var timer = 60;
+var timer = 5;
 var started = false; 
 var respond1 = ["framework", "for loops", "1990", "loki"];
 var respond2 = ["gaming program", "variables", "1995", "c sharp"];
@@ -21,8 +21,9 @@ function setTime() {
     timer--;
     clock.textContent = timer;
 
-    if(secondsLeft === 0) {
+    if(timer === 0) {
       clearInterval(timerInterval);
+      clock = ""
       
     }
 
