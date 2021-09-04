@@ -2,9 +2,6 @@
 var qa = document.getElementById("show");
 var initialss = document.getElementById("hide");
 var currentindex = 0;
-var answerBox = document.getElementsByTagName("button");
-var listItem = document.getElementsByTagName("ul");
-var listChoice = document.getElementsByTagName("li");
 var clock = document.getElementById("time");
 var questions = document.getElementById("start");
 var button1 = document.getElementById("bsb");
@@ -12,7 +9,7 @@ var button2 = document.getElementById("nsync");
 var button3 = document.getElementById("98");
 var button4 = document.getElementById("otown");
 var maincontainer = document.getElementById("container");
-var timer = 5;
+var timer = 60;
 var started = false; 
 var showinghigscore=false;
 var respond1 = ["framework", "for loops", "1990", "loki"];
@@ -64,12 +61,13 @@ function showoptions() {
 
 
 function wasClicked() {
-  console.log("buttonkl[o] was clicked");
-  currentindex++;
+  console.log("button was pressed");
+  
 }
-button1.addEventListener("click", function () {
+qa.addEventListener("click", function () {
   initialss.style.display="none";
   setTime()
+  wasClicked()
   console.log(currentindex)
 if(started == false){
   started = true;
