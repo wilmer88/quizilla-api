@@ -1,4 +1,3 @@
-
 var qa = document.getElementById("show");
 var initialss = document.getElementById("hide");
 var currentindex = 0;
@@ -10,8 +9,8 @@ var button3 = document.getElementById("98");
 var button4 = document.getElementById("otown");
 var maincontainer = document.getElementById("container");
 var timer = 60;
-var started = false; 
-var showinghigscore=false;
+var started = false;
+var showinghigscore = false;
 var respond1 = ["framework", "for loops", "1990", "loki"];
 var respond2 = ["gaming program", "variables", "1995", "c sharp"];
 var respond3 = ["scripting language", "functions", "2002", "rugrats"];
@@ -24,76 +23,58 @@ var ask = [
   "who wrote this code",
 ];
 
-
-
-initialss.style.display="none"; 
-
-
+initialss.style.display = "none";
 
 function setTime() {
-  var timerInterval = setInterval(function() {
+  var timerInterval = setInterval(function () {
     timer--;
     clock.textContent = timer;
 
-    if(timer === 0) {
+    if (timer === 0) {
       clearInterval(timerInterval);
-      clock = ""
+      clock = "";
     }
   }, 1000);
 }
 
-
 function showoptions() {
-
-  
   questions.textContent = ask[currentindex];
   button1.textContent = respond1[currentindex];
   button2.textContent = respond2[currentindex];
   button3.textContent = respond3[currentindex];
   button4.textContent = respond4[currentindex];
-  currentindex++
-console.log(currentindex)
-  
-  if(currentindex >= 5){  
-     qa.style.display="none";
-    initialss.style.display="initial"; 
-   } 
+  currentindex++;
+  console.log(currentindex);
+
+  if (currentindex >= 5) {
+    qa.style.display = "none";
+    initialss.style.display = "initial";
+  }
 }
 
-
-function question1Check(event){
-   if(currentindex == 1 && event.target.id === button3.id ){
-    console.log("correct")
-    
-  }else( timer -=15)
-
+function question1Check(event) {
+  if (currentindex === 1 && event.target.id === button3.id) {
+    console.log("correct");
+  } else timer - 15;
 }
- 
 
-button1.addEventListener("click", function(event){
+button1.addEventListener("click", function () {
   question1Check();
   showoptions();
   setTime();
-  if(started == false){
-   started = true;
+  if (started == false) {
+    started = true;
   }
+});
 
-
-  })
-
-//  button3.addEventListener ("click", function(event){ 
+//  button3.addEventListener ("click", function(event){
 //   if(currentindex == 1 && event.target.id === button3.id ){
 //     console.log("correct")
 //     showoptions()
 //   }else( timer -=15, showoptions())
 //   })
-    
-
-
-    
 
 // if(event.target.id === button3.id && currentindex == 1){
 //   showoptions()
 //   console.log("correct")
 // }
-    
