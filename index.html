@@ -8,29 +8,48 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="assets\style.css">
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
     </head>
     <body>
       
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets\style.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
   </head>
   <body>
-    <wraper>
+    
      <p style="text-align: right">time left:<span id="time"></span></p>
         <h5 style="text-align: left">highscore</h5>
       </div>
+
       <div class="container">
         <div class="row">
-        <div class="col-sm-12" style="text-align: center">
+        <div  id="hide" class="col-sm-12" style="text-align: center">
+                  <h1>high score</h1>
+                  <br>
+                  <form class="form-inline">
+                   
+                    <div class="form-group mx-sm-3 mb-2">
+                      <label for="inputPassword2" class="sr-only">enter initials</label>
+                      <input type="password" class="form-control" id="inputPassword2" placeholder="">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">save</button>
+                  </form>
+        </div>
+      </div>
+    </div>
+      <div class="container">
+        <div class="row">
+        <div  class="col-sm-12" style="text-align: center">
+          <wraper id="show">
                   <h5 id="start">click start to begin</h5>
 
 
                 
-      <div class="container" >
+      <div class="show" class="container" >
       <div class="row">
       <div class="col-sm-12" style="text-align: center">
         <ul class="list-group list-group-flush">
@@ -41,6 +60,11 @@
        
         </ul> 
       </wraper>
+    </div>
+  </div>
+</div>
+      
+      
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <script src="./script.js"></script>
