@@ -19,6 +19,15 @@ var respond1 = ["framework", "for loops", "1990", "loki"];
 var respond2 = ["gaming program", "variables", "1995", "c sharp"];
 var respond3 = ["scripting language", "functions", "2002", "rugrats"];
 var respond4 = ["programing language", "c++", "1986", "agent carter"];
+var ask = [
+  "is javascript",
+  "is not part of javascript",
+  "year javascript was created",
+  "time travel marvel show",
+  "who wrote this code",
+];
+
+
 
 initialss.style.display="none"; 
 
@@ -36,13 +45,6 @@ function setTime() {
   }, 1000);
 }
 
-var ask = [
-  "is javascript",
-  "is not part of javascript",
-  "year javascript was created",
-  "time travel marvel show",
-  "who wrote this code",
-];
 
 function showoptions() {
 
