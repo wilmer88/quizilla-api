@@ -45,14 +45,15 @@ function setTime() {
 
 function showoptions() {
 
+  
   questions.textContent = ask[currentindex];
   button1.textContent = respond1[currentindex];
   button2.textContent = respond2[currentindex];
   button3.textContent = respond3[currentindex];
   button4.textContent = respond4[currentindex];
-  currentindex++;
+  currentindex++
+console.log(currentindex)
   
-  console.log(currentindex)
   if(currentindex >= 5){  
      qa.style.display="none";
     initialss.style.display="initial"; 
@@ -60,22 +61,39 @@ function showoptions() {
 }
 
 
-function wasClicked() {
-  console.log("button was pressed");
-  
+function question1Check(event){
+   if(currentindex == 1 && event.target.id === button3.id ){
+    console.log("correct")
+    
+  }else( timer -=15)
+
 }
-qa.addEventListener("click", function () {
-  initialss.style.display="none";
-  setTime()
-  wasClicked()
-  console.log(currentindex)
-if(started == false){
-  started = true;
-  showoptions()
-  }else(showoptions());
+ 
+
+button1.addEventListener("click", function(event){
+  question1Check();
+  showoptions();
+  setTime();
+  if(started == false){
+   started = true;
+  }
 
 
-});
+  })
+
+//  button3.addEventListener ("click", function(event){ 
+//   if(currentindex == 1 && event.target.id === button3.id ){
+//     console.log("correct")
+//     showoptions()
+//   }else( timer -=15, showoptions())
+//   })
+    
 
 
+    
 
+// if(event.target.id === button3.id && currentindex == 1){
+//   showoptions()
+//   console.log("correct")
+// }
+    
