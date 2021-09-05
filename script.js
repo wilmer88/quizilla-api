@@ -52,6 +52,7 @@ initialss.style.display = "none";
 
 //function that starts quiz
 function comienzaPrueba() {
+  var objectVariableThatContainsQCA = ask[currentindex]
 console.log("code will execute when ready");
  
 }
