@@ -33,33 +33,31 @@ var ask = [
     options: ["Bill Gates", "Brendan Eich", "Steve Jobs", "steven Hopkings"],
   },
 ];
+//instance where the timer on the screen begins to count down unsing the timelimit function
+clock.textContent = setInterval(timelimit, 1000);
+//this code hides the set highscore html block
+initialss.style.display = "none";
 
 //this function countsdown the timer with a conditional code to esecute for when the timer reaches zero
 function timelimit() {
   timer--;
   clock.textContent = timer;
   if (timer <= 0) {
-    endTest();
+    clearInterval(timelimit);
+    clock=""
+    console.log("timer reached 0 value");
   }
 };
-//
+//function that starts quiz
 function comienzaPrueba() {
-  //this code hides the set highscore block
-initialss.style.display = "none";
-
-//instance where the timer on the screen begins to count down unsing the timelimit function
-clock = setInterval(timelimit, 1000);
+console.log("code will execute when ready");
 
 }
 
-button1.addEventListener("click", function (event) {
+button1.addEventListener("click", function () {
+  console.log("button1 was clicked");
+   comienzaPrueba();
   
-
-  if (started === false) {
-    started = true;
-    showoptions();
-    question1Check();
-  }
 });
 
 // function setTime() {
