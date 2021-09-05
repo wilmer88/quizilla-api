@@ -33,8 +33,7 @@ var ask = [
     options: ["Bill Gates", "Brendan Eich", "Steve Jobs", "steven Hopkings"],
   },
 ];
-//this code hides the set highscore block
-initialss.style.display = "none";
+
 //this function countsdown the timer with a conditional code to esecute for when the timer reaches zero
 function timelimit() {
   timer--;
@@ -42,7 +41,26 @@ function timelimit() {
   if (timer <= 0) {
     endTest();
   }
+};
+//
+function comienzaPrueba() {
+  //this code hides the set highscore block
+initialss.style.display = "none";
+
+//instance where the timer on the screen begins to count down unsing the timelimit function
+clock = setInterval(timelimit, 1000);
+
 }
+
+button1.addEventListener("click", function (event) {
+  
+
+  if (started === false) {
+    started = true;
+    showoptions();
+    question1Check();
+  }
+});
 
 // function setTime() {
 //   var timerInterval = setInterval(function () {
@@ -55,34 +73,3 @@ function timelimit() {
 //     }
 //   }, 1000);
 // }
-
-
-function question1Check(event) {
-  if (button1.id === this.event.target.id) {
-    console.log(button1.id);
-    console.log(this.event.target.id);
-    console.log("allgood");
-    showoptions();
-  } else timer -= 15;
-  console.log("somthing went wrong");
-  showoptions();
-}
-function question2Check(event) {
-  if (button4.id === !this.event.target.id) {
-    timer -= 15;
-    console.log(button4.id);
-    console.log(event.target.id);
-  } else showoptions();
-  console.log("allgood");
-}
-
-button1.addEventListener("click", function (event) {
-  clock = setInterval(timelimit, 1000);
-
-  if (started === false) {
-    started = true;
-    showoptions();
-    question1Check();
-  }
-});
-
