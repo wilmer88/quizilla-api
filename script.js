@@ -1,11 +1,3 @@
-function timelimit() {
-  timer--;
-  clock.textContent = timer;
-  if (timer <= 0) {
-    endTest();
-  }
-}
-
 var qa = document.getElementById("show");
 var initialss = document.getElementById("hide");
 var currentindex = 0;
@@ -18,23 +10,39 @@ var button3 = document.getElementById("98");
 var button4 = document.getElementById("otown");
 var maincontainer = document.getElementById("container");
 var timer = 60;
-var started = false;
-var started2 = false;
-var started3 = false;
-var showinghigscore = false;
-var respond1 = ["framework", "for loops", "1990", "loki"];
-var respond2 = ["gaming program", "variables", "1995", "c sharp"];
-var respond3 = ["scripting language", "functions", "2002", "rugrats"];
-var respond4 = ["programing language", "c++", "1986", "agent carter"];
+//array called ask with five objects containing two properties
 var ask = [
-  "is javascript",
-  "is not part of javascript",
-  "year javascript was created",
-  "time travel marvel show",
-  "who wrote this code",
+  {
+    pregunta: "is javascript",
+    options: ["framework", "for loops", "1990", "loki"],
+  },
+  {
+    pregunta: "is not part of javascript",
+    options: ["gaming program", "variables", "1995", "c sharp"],
+  },
+  {
+    pregunta: "year javascript was created",
+    options: ["scripting language", "functions", "2002", "rugrats"],
+  },
+  {
+    pregunta: "time travel marvel show",
+    options: ["programing language", "c++", "1986", "agent carter"],
+  },
+  {
+    pregunta: "who inveted javascript",
+    options: ["Bill Gates", "Brendan Eich", "Steve Jobs", "steven Hopkings"],
+  },
 ];
-
+//this code hides the set highscore block
 initialss.style.display = "none";
+//this function countsdown the timer with a conditional code to esecute for when the timer reaches zero
+function timelimit() {
+  timer--;
+  clock.textContent = timer;
+  if (timer <= 0) {
+    endTest();
+  }
+}
 
 // function setTime() {
 //   var timerInterval = setInterval(function () {
@@ -91,14 +99,3 @@ button1.addEventListener("click", function (event) {
   }
 });
 
-//  button3.addEventListener ("click", function(event){
-//   if(currentindex == 1 && event.target.id === button3.id ){
-//     console.log("correct")
-//     showoptions()
-//   }else( timer -=15, showoptions())
-//   })
-
-// if(event.target.id === button3.id && currentindex == 1){
-//   showoptions()
-//   console.log("correct")
-// }
