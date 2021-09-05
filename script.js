@@ -52,6 +52,7 @@ initialss.style.display = "none";
 
 //function that starts quiz
 function comienzaPrueba() {
+  
 console.log("code will execute when ready");
  
 }
