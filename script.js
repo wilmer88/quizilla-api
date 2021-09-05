@@ -56,20 +56,7 @@ function timelimit() {
 //   }, 1000);
 // }
 
-function showoptions() {
-  questions.textContent = ask[currentindex];
-  button1.textContent = respond1[currentindex];
-  button2.textContent = respond2[currentindex];
-  button3.textContent = respond3[currentindex];
-  button4.textContent = respond4[currentindex];
-  currentindex++;
-  console.log(currentindex);
 
-  if (currentindex >= 5) {
-    qa.style.display = "none";
-    initialss.style.display = "initial";
-  }
-}
 function question1Check(event) {
   if (button1.id === this.event.target.id) {
     console.log(button1.id);
