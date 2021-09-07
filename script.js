@@ -1,15 +1,20 @@
+var starter = document.getElementById("lll");
 var qa = document.getElementById("show");
 var initialss = document.getElementById("hide");
 var currentindex = 0;
 var grade = document.getElementById("confirm");
 var clock = document.getElementById("time");
-var questions = document.getElementById("start");
-var button1 = document.getElementById("bsb");
-var button2 = document.getElementById("nsync");
-var button3 = document.getElementById("98");
-var button4 = document.getElementById("otown");
+
+var btUno= document.getElementById("bsb");
+var qaEl= document.getElementById("start");
 var maincontainer = document.getElementById("container");
-var timer = 5;
+
+var btDos = document.getElementById("ppp");
+var btTres = document.getElementById("ttt");
+var btFour = document.getElementById("eee");
+var started = false
+
+var timer = 100;
 //array called ask with five objects containing two properties
 var ask = [
   {
@@ -19,21 +24,28 @@ var ask = [
   },
   {
     pregunta: "is not part of javascript",
-    options: ["Methods", "variables", "objects", "c sharp"],
+    options: ["Methods", "variables", "objects", "c++"],
+    answer: "c++"
   },
   {
     pregunta: "year javascript was created",
     options: ["1995", "1999", "2002", "1984"],
+    answer: "1995"
   },
   {
-    pregunta: "time travel marvel show",
-    options: ["programing language", "c++", "1986", "agent carter"],
+    pregunta: "not a type of variables",
+    options: ["object", "c sharp", "boolian", "interger"],
+    answer: "c sharp"
   },
   {
     pregunta: "who inveted javascript",
     options: ["Bill Gates", "Brendan Eich", "Steve Jobs", "steven Hopkings"],
+    answer: "Brendan Eich"
   },
 ];
+
+initialss.style.display = "none";
+
 function setTime() {
   var timerInterval = setInterval(function () {
     timer--;
@@ -44,25 +56,85 @@ function setTime() {
       clock = "";
     }
   }, 1000);
-}
+};
 
-//this code hides the set highscore html block
-initialss.style.display = "none";
-
-
-//function that starts quiz
-function comienzaPrueba() {
-  var objectVariableThatContainsQCA = ask[currentindex]
-console.log("code will execute when ready");
- 
-}
-
-button1.addEventListener("click", function () {
- 
-  console.log("button1 was clicked");
-   comienzaPrueba();
-   setTime()
+function checkAnswer(){
   
-});
+  if(this.event.target.textContent !== ask[currentindex].answer){
+    timer -= 15
+    console.log(this.event.target.textContent);
+    console.log(this.ask[currentindex].answer);
+    console.log(currentindex)
+    currentindex++
+    showQuestions()
+  }else(showQuestions,currentindex++)
+};
 
 
+ 
+  function showQuestions(){
+    if(!started){
+      setTime()
+      started = true;
+    }
+     
+   
+    var objectVariableThatContainsQCA = ask[currentindex];
+ qaEl.textContent = objectVariableThatContainsQCA.pregunta
+btUno.textContent = objectVariableThatContainsQCA.options[0];
+btDos.textContent = objectVariableThatContainsQCA.options[1];
+btTres.textContent = objectVariableThatContainsQCA.options[2];
+btFour.textContent = objectVariableThatContainsQCA.options[3];
+
+
+
+  }
+
+  starter.addEventListener("click",function(){
+starter.style.display ="none"
+    showQuestions()
+   
+   btFour.onclick=function(){
+    checkAnswer();
+    showQuestions()
+   }
+   btUno.onclick=function(){
+    checkAnswer()
+    showQuestions()
+    }
+    btDos.onclick=function(){
+      checkAnswer()
+      showQuestions()
+    }
+    btTres.onclick=function(){
+      checkAnswer()
+      showQuestions()
+    }
+   
+  })
+    
+    
+    
+    
+  
+ 
+ 
+    
+   
+ 
+
+ 
+
+
+ 
+  //function that starts quiz
+
+
+  
+    
+    
+    
+    
+  
+  
+  
