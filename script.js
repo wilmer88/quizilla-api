@@ -1,4 +1,3 @@
-
 var starter = document.getElementById("lll");
 var qa = document.getElementById("show");
 var initialsss = document.getElementById("hide");
@@ -46,11 +45,6 @@ var ask = [
     answer: "Brendan Eich"
   },
 ];
-
-
-
-
-
 function setTime() {
   var timerInterval = setInterval(function () {
     timer--;
@@ -66,11 +60,7 @@ function setTime() {
   }, 1000);
 };
 
-
-
-
 function checkAnswer(){
- 
   if(this.event.target.textContent !== ask[currentindex].answer){
     timer -= 15
     console.log(this.event.target.textContent);
@@ -81,8 +71,6 @@ function checkAnswer(){
   }else(showQuestions,currentindex++)
 };
 
-
- 
   function showQuestions(){
     var objectVariableThatContainsQCA = ask[currentindex];
  qaEl.textContent = objectVariableThatContainsQCA.pregunta
@@ -112,52 +100,28 @@ initialsss.style.display = "none";
     };
 starter.style.display = "none";
     showQuestions()
-   
    btFour.onclick=function(){
-     
     checkAnswer();
     showQuestions()
    }
    btUno.onclick=function(){
-    
-
     checkAnswer()
     showQuestions()
     }
     btDos.onclick=function(){
-    
-
       checkAnswer()
       showQuestions()
     }
     btTres.onclick=function(){
-    
-
       checkAnswer()
       showQuestions()
     }
 initalSaveLS.onclick=function(){
   locsave();
+} })
+    
+    
 
-}
-   
-  })
-    
-    
-    
-    
-  
- 
- 
-    
-   
- 
-
- 
-
-
- 
-  //function that starts quiz
 
 
   
