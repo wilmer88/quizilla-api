@@ -1,20 +1,23 @@
+
 var starter = document.getElementById("lll");
 var qa = document.getElementById("show");
-var initialss = document.getElementById("hide");
+var initialsss = document.getElementById("hide");
 var currentindex = 0;
 var grade = document.getElementById("confirm");
 var clock = document.getElementById("time");
-
+var sco = document.getElementById("scoreT")
 var btUno= document.getElementById("bsb");
 var qaEl= document.getElementById("start");
 var maincontainer = document.getElementById("container");
-
+var initalSaveLS = document.getElementById("saveB")
 var btDos = document.getElementById("ppp");
 var btTres = document.getElementById("ttt");
 var btFour = document.getElementById("eee");
 var started = false
+var inPut = document.getElementById("Hsc");
 
 var timer = 100;
+
 //array called ask with five objects containing two properties
 var ask = [
   {
@@ -44,22 +47,30 @@ var ask = [
   },
 ];
 
-initialss.style.display = "none";
+
+
+
 
 function setTime() {
   var timerInterval = setInterval(function () {
     timer--;
     clock.textContent = timer;
-
-    if (timer === 0) {
+    if (timer === 0 || currentindex > 4) {
       clearInterval(timerInterval);
+      qa.style.display = "none";
+      initialsss.style.display = "";
+      sco.textContent = timer
+
       clock = "";
     }
   }, 1000);
 };
 
+
+
+
 function checkAnswer(){
-  
+ 
   if(this.event.target.textContent !== ask[currentindex].answer){
     timer -= 15
     console.log(this.event.target.textContent);
@@ -73,12 +84,6 @@ function checkAnswer(){
 
  
   function showQuestions(){
-    if(!started){
-      setTime()
-      started = true;
-    }
-     
-   
     var objectVariableThatContainsQCA = ask[currentindex];
  qaEl.textContent = objectVariableThatContainsQCA.pregunta
 btUno.textContent = objectVariableThatContainsQCA.options[0];
@@ -86,30 +91,55 @@ btDos.textContent = objectVariableThatContainsQCA.options[1];
 btTres.textContent = objectVariableThatContainsQCA.options[2];
 btFour.textContent = objectVariableThatContainsQCA.options[3];
 
+};
+function locsave(){
+  highscore= JSON.parse(window.localStorage.getItem("highscore")) || [];
+var addnew= {
+  score: timer,
+  inital: inPut.value
+};
+highscore.push(addnew);
+window.localStorage.setItem("highscore", JSON.stringify(highscore));
+window.location.href = "highScore.html";
+}
 
-
-  }
+initialsss.style.display = "none";
 
   starter.addEventListener("click",function(){
-starter.style.display ="none"
+    if(!started){
+      setTime()
+      started = true;
+    };
+starter.style.display = "none";
     showQuestions()
    
    btFour.onclick=function(){
+     
     checkAnswer();
     showQuestions()
    }
    btUno.onclick=function(){
+    
+
     checkAnswer()
     showQuestions()
     }
     btDos.onclick=function(){
+    
+
       checkAnswer()
       showQuestions()
     }
     btTres.onclick=function(){
+    
+
       checkAnswer()
       showQuestions()
     }
+initalSaveLS.onclick=function(){
+  locsave();
+
+}
    
   })
     
