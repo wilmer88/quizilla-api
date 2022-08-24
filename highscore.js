@@ -5,8 +5,11 @@ highscorez.sort(function (a, b){
 })
 highscorez.forEach(function(score){
     litag = document.createElement("li");
-    litag.textContent = score.inital + "-" + score.score
-    console.log(typeof highscorez.inital)
+   
+    tdData = document.createElement("td");
+    tdData.textContent = score.inital + "-" + score.score;
+    litag.appendChild(tdData);
+    
     var olEle = document.getElementById("pands");
     olEle.appendChild(litag)
 })
